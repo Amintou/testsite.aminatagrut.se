@@ -1,0 +1,455 @@
+* {
+padding: 0;
+margin: 0;
+font-family: 'Montserrat', 'Helvetica', sans-serif;
+}
+
+html {
+scroll-behavior: smooth;
+background-color: orange;
+}
+
+/* NAVIGATION */
+
+#main-header {
+background: #8e8e8e;
+text-align: center;
+padding: 20px 0;
+position: fixed;
+width: 100%;
+box-sizing: border-box;
+color: orange;
+}
+
+.logo-container {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.nav-toggle {
+display: none;
+}
+
+.toggle-label {
+position: absolute;
+top: 0;
+right: 0;
+margin-right: 15px;
+height: 100%;
+display: flex;
+align-items: center;
+overflow: hidden;
+}
+
+.toggle-label span,
+.toggle-label span::before,
+.toggle-label span::after {
+display: block;
+background: #fff;
+height: 3px;
+width: 25px;
+border-radius: 3px;
+position: relative;
+}
+
+.toggle-label span::before,
+.toggle-label span::after {
+position: absolute;
+content: '';
+}
+
+.toggle-label span::before {
+bottom: 8px;
+}
+
+.toggle-label span::after {
+top: 8px;
+}
+
+#menu {
+display: flex;
+align-items: center;
+width: 60%;
+}
+
+#menu>ul {
+display: flex;
+width: 90%;
+list-style: none;
+justify-content: space-between;
+}
+
+.menu-link {
+padding: 10px 25px;
+text-decoration: none;
+border-radius: 6px;
+color: #fff;
+border: solid 1px #fff;
+transition: background-color ease-in-out 0.2s;
+color: ease-in-out 0.3s;
+}
+
+.menu-link:hover {
+background-color: #fff;
+color: #333;
+font-weight: 800;
+}
+
+/* TEXT AREA */
+
+#menu {
+position: absolute;
+background: #8e8e8e;
+top: 100%;
+width: 100%;
+text-align: right;
+transform: scale(1, 0);
+transform-origin: top;
+transition: transform .5s ease-in-out;
+}
+
+#menu ul {
+list-style: none;
+}
+
+#menu li {
+padding: 20px;
+}
+
+#menu li:hover {}
+
+.menu-link {
+text-decoration: none;
+color: #fff;
+padding: 15px 30px;
+font-size: 14px;
+text-transform: uppercase;
+font-weight: 600;
+opacity: 0;
+transition: opacity .15s ease-in-out, background-color ease-in-out .4s, color ease-in-out .4s;
+}
+
+.menu-link:hover {
+color: orange;
+background-color: #fff;
+}
+
+#nav-toggle:checked~#menu {
+transform: scale(1, 1);
+}
+
+.toggle-label span::before,
+.toggle-label span::after,
+.toggle-label span {
+transition: all .5s ease-in-out;
+}
+
+#nav-toggle:checked~.toggle-label span {
+background: #8e8e8e;
+}
+
+#nav-toggle:checked~.toggle-label span::before {
+transform: rotate(45deg);
+bottom: 0;
+background: #fff;
+}
+
+#nav-toggle:checked~.toggle-label span::after {
+transform: rotate(-45deg);
+top: 0;
+background: #fff;
+}
+
+#nav-toggle:checked~#menu a {
+opacity: 1;
+transition: opacity .3s ease-in-out .4s;
+}
+
+/* --- HERO SECTION STYLES --- */
+
+.hero-section {
+display: flex;
+box-sizing: border-box;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7)), url(../img/diverseeye.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: 50% 50%;
+height: 100vh;
+width: 100%;
+}
+
+.hero-text {
+width: 80%;
+text-align: center;
+line-height: 30px;
+}
+
+.hero-title {
+font-size: 24px;
+line-height: 30px;
+margin-bottom: 20px;
+color: orange;
+letter-spacing: 4px;
+}
+
+.hero-paragraph {
+font-weight: 600;
+color: #fff;
+font-size: 18px;
+letter-spacing: 0px;
+margin-bottom: 20px;
+}
+
+.button-title {
+font-weight: 600;
+font-size: 30px;
+margin: 12px;
+color: #fff;
+letter-spacing: 4px;
+}
+
+.button-paragraph {
+font-weight: 600;
+color: #00000;
+font-size: 12px;
+letter-spacing: 0px;
+margin: 8px;
+}
+
+/* --- CTA BUTTON STYLES --- */
+
+.read-more {
+display: inline-block;
+margin-top: 20px;
+padding: 8px 15px;
+background-color: orange;
+border-radius: 5px;
+font-weight: 600;
+text-align: center;
+text-decoration: none;
+text-transform: uppercase;
+letter-spacing: 6px;
+font-size: 16px;
+color: #333;
+transition: background-color ease-in-out 0.2s, color ease-in-out 0.2s;
+}
+
+.read-more:hover {
+background-color: #333;
+color: orange;
+}
+
+.button {
+display: inline-block;
+margin-top: 20px;
+margin-bottom: 40px;
+padding: 8px 15px;
+background-color: orange;
+border-radius: 5px;
+font-weight: 500;
+text-align: center;
+text-decoration: none;
+text-transform: uppercase;
+letter-spacing: 6px;
+font-size: 14px;
+color: #333;
+transition: background-color ease-in-out 0.2s, color ease-in-out 0.2s;
+}
+
+.button:hover {
+background-color: #fff;
+color: orange;
+}
+
+/* --- CARDS SECTION STYLES --- */
+
+.cards-section {
+width: 100%;
+height: auto;
+padding: 0 5%;
+box-sizing: border-box;
+}
+
+.cards-container {
+display: block;
+margin-top: -100px;
+width: 100%;
+}
+
+.card {
+width: 80%;
+margin: 0 auto 30px auto;
+height: auto;
+padding: 30px 10px;
+box-sizing: border-box;
+background: #f4f4f4;
+border-radius: 10px;
+border-bottom: 20px solid rgba(255, 255, 255, 0.0);
+text-align: center;
+line-height: 30px;
+box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+height: 100px;
+margin-bottom: 40px;
+}
+
+.card-title {
+font-size: 22px;
+font-weight: 400;
+text-transform: uppercase;
+margin-bottom: 20px;
+}
+
+
+/* RECIPE SECION */
+
+.recipe-section {
+width: 100%;
+height: auto;
+padding: 0 5%;
+box-sizing: border-box;
+align-content: center;
+}
+
+.recipe-container {
+display: block;
+margin-top: -100px;
+width: 100%;
+align-content: center
+}
+
+
+/* CONTACT SECTION */
+
+.contact-section {
+width: 100%;
+height: auto;
+padding: 0 5%;
+box-sizing: border-box;
+align-content: center;
+}
+
+
+/* --- MOBILE TO DESKTOP --- */
+
+@media (min-width: 960px) {
+.toggle-label {
+    display: none;
+}
+#main-header {
+    padding: 10px 0;
+}
+#main-header .container {
+    display: flex;
+}
+#main-header #logo {
+    flex: 1;
+}
+#menu a {
+    opacity: 1;
+}
+#menu {
+    all: unset;
+    flex: 2;
+}
+#menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+}
+#menu li {
+    margin: auto;
+}
+
+/* --- HERO SECTION STYLES --- */
+.hero-section {
+    display: flex;
+}
+.hero-text {
+    width: 80%;
+    text-align: center;
+    line-height: 30px;
+}
+.hero-title {
+    font-size: 48px;
+    margin-bottom: 48px;
+    color: orange;
+    letter-spacing: 8px;
+}
+.hero-paragraph {
+    font-weight: 600;
+    color: #fff;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+/* --- CTA BUTTON STYLES --- */
+.read-more {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: orange;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 20px;
+    color: #333;
+    transition: background-color ease-in-out .3s, color ease-in-out .3s;
+}
+.read-more:hover {
+    background-color: #333;
+    color: orange;
+}
+/* --- CARDS SECTION STYLES --- */
+.cards-section {
+    width: 100%;
+    height: 80vh;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    margin: -150px auto 0 auto;
+    width: 100%;
+    max-width: 1280px;
+    perspective: 5000px;
+}
+.card {
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    background: #f4f4f4;
+    border-radius: 10px;
+    border-bottom: 20px solid rgba(255, 255, 255, 0.0);
+    text-align: center;
+    line-height: 30px;
+    box-shadow: 0px 0px 12px 8px rgba(0, 0, 0, 0.1);
+    -webkit-transition: transform ease-in-out .3s, height ease-in-out .3s;
+    transition: transform ease-in-out .3s, height ease-in-out .3s;
+}
+.card:hover {
+    transform: rotateX(8deg) scale(1.1, 1.1);
+    height: 500px;
+}
+.card img {
+    height: 100px;
+    margin-bottom: 40px;
+}
+.card-title {
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMG UX & Code</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="logo-container" id="logo">
+                <h1>AMG UX & Code</h1>
+            </div>
+            <input type="checkbox" class="nav-toggle" id="nav-toggle">
+            <nav id="menu">
+                <ul>
+                    <li><a class="menu-link" href="index.html">Start</a></li>
+                    <li><a class="menu-link" href="about.html">About</a></li>
+                    <li><a class="menu-link" href="#">Shop</a></li>
+                    <li><a class="menu-link" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <label for="nav-toggle" class="toggle-label"><span></span></label>
+        </div>
+    </header>
+    <input type="checkbox" id="toggle-menu" />
+    <section class="hero-section">
+        <div class="hero-text">
+            <h1 class="hero-title">Shop with AMG!</h1>
+            <p class="hero-paragraph">This is our shopping page, where you will soon find an exclusive selection of our favorite merchandise. <br>Start with our recipes below!</p>
+            <a href="#recipe-section" class="read-more">Choose Recipe</a>
+        </div>
+    </section>
+
+    <section class="recipe-section" id="recipe-section">
+
+
+
+        <div id="recipe1"><p class="button-title">Applepie<br><br><img src="img/nathalie-jolie-ERGI0DDJXco-unsplash.jpg" height="50%" width="50%"></img></p></div>
+        <div id="recipe2" style="display: none;"><p class="button-title">Baked Pears<br><br><img src="img/maria-shkliaeva-v20iAW34n3g-unsplash.jpg" height="45%" width="45%"></img></p></div>
+        <div id="recipe3" style="display: none;"><p class="button-title">Fruit Smoothies<br><br><img src="img/sara-cervera-cjiJUfFCoUs-unsplash.jpg" height="25%" width="25%"></img></p></div>
+        <button class=button id="prev" onclick="prevRecipe ()"><p class="button-paragraph">< Previous</p></button>
+        <button class=button id="next" onclick="nextRecipe ()"><p class="button-paragraph">Next ></p></button>
+        </div>
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+
+    <script>
+              /** SLIDER FOR RECIPES **/
+
+      let currentRecipe = 1;
+      let nextRecipe = () => {
+        document.getElementById("recipe"+currentRecipe).style.display = "none";
+        document.getElementById("recipe"+(currentRecipe+1)).style.display = "block";
+        currentRecipe++;
+      }
+
+      let prevRecipe = () => {
+        document.getElementById("recipe"+currentRecipe).style.display = "none";
+        document.getElementById("recipe"+(currentRecipe-1)).style.display = "block";
+        currentRecipe--;
+      }
+
+    </script>
+
+</body>
+
+</html>
